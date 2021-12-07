@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=category.charAt(0).toUpperCase()+category.slice(1)%> Products
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%=category.charAt(0).toUpperCase()+category.slice(1)%> Products
+    </h1>
+    <ul>
+        <% for(product of products){%>
+            <li><a href="/products/<%=product._id%>">
+                    <%= product.name %>
+                </a></li>
+            <% } %>
+    </ul>
+    <a href="products/new">Add new Product</a>
+    <% if(category !=="All" ) {%>
+        <b> | </b>
+        <a href="products">All Products</a>
+        <% } %>
+</body>
+
+
+</html>
